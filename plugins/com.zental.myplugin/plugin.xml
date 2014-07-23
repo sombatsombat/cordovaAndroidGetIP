@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.zental.myplugin"
+      version="0.1.0">
+    <name>Calendar</name>
+    <description>Zental PhoneGap IPaddress Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,ipaddress</keywords>
+  
+    <js-module src="www/ipaddress.js" name="IPaddress">
+        <clobbers target="window.ipaddress" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="IPaddress">
+                <param name="android-package" value="com.zental.myplugin.IPaddress"/>
+            </feature>
+        </config-file>
+ 
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+        </config-file>
+        
+        <source-file src="src/android/IPaddress.java" target-dir="src/com/zental/myplugin" />     
+     </platform>         
+</plugin>

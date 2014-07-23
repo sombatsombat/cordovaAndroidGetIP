@@ -1,0 +1,43 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"IPaddress\"><param name=\"android-package\" value=\"com.zental.myplugin.IPaddress\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"WebSocket\"><param name=\"android-package\" value=\"com.ququplay.websocket.WebSocket\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.zental.myplugin": {
+            "PACKAGE_NAME": "com.zental.testip"
+        },
+        "com.ququplay.websocket.WebSocket": {
+            "PACKAGE_NAME": "com.zental.testip"
+        }
+    },
+    "dependent_plugins": {}
+}
